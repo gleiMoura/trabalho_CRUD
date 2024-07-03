@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    background-color: #d3d3d3;
+    position: relative;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #999;
+    box-sizing: border-box;
+    /*Isso permite não aumentar tamanho mesmo aumentanto o padding*/
+    padding: 0 10px;
+    background-color: white;
+}
+
+.caixa-pesquisa {
+    width: 100%;
+    border: none;
+}
+
+.caixa-pesquisa:focus {
+    border-color: transparent;
+    outline: none;
+    /* Isso remove a borda de foco padrão da caixa de texto*/
+}
+
+.icone-cabecalho {
+    width: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 20px;
+    /*0 20 -> altura largura*/
+    margin: 10px;
+    border-radius: 5px;
+    /*coloca borda arredondada*/
+    background-color: white;
+}
+
+.info {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 60px;
+}
+
+.acoes {
+    display: flex;
+}
+
+.acoes-icone {
+    width: 20px;
+    margin: 5px
+}
+
+h3,
+p {
+    margin: 0;
+}
+
+.tela-adiciona-contato, .tela-edita-contato {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    z-index: 99;
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: none;
+}
+
+.adiciona-contato, .edita-contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height: 200px;
+    background-color: #d3d3d3;
+    z-index: 999;
+}
+
+.caixa-contato {
+    border: none;
+    border-bottom: 1px solid #999;
+    margin: 0 10px 10px 10px;
+}
+
+.caixa-contato:focus {
+    border-color: transparent;
+    outline: none; /* Isso remove a borda de foco padrão da caixa de texto*/
+}
+
+.add-contact-botao, .edit-contact-botao {
+    height: 50px;
+    background-color: #999;
+    border: none;
+    margin: 0 10px;
+}

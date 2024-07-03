@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Lista de Contatos</title>
+</head>
+
+<body>
+    <header>
+        <div class="procura icone-cabecalho">
+            <img src="images/search.svg" alt="pesquisa" />
+        </div>
+        <input type="text" placeholder="Search Contacts" id="caixa-pesquisa" class="caixa-pesquisa"
+            oninput="searchContact()" />
+        <div class="insere icone-cabecalho" onclick={openAddContact()}>
+            <img src="images/person-add.svg" alt="adicionar contato" />
+        </div>
+    </header>
+    <main>
+        <div class="item ana_britto">
+            <div class="info">
+                <h3>Ana Britto</h3>
+                <p>ana_britto</p>
+            </div>
+            <div class="acoes">
+                <div class="edita acoes-icone" onclick="openEditContact('ana_britto')">
+                    <img src="images/caneta.svg" alt="editar" />
+                </div>
+                <div class="exclui acoes-icone" onclick="removeContact('ana_britto')">
+                    <img src="images/cancel.svg" alt="excluir" />
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="tela-adiciona-contato" onclick={}>
+        <div class="adiciona-contato">
+            <input type="text" placeholder="Name" class="name caixa-contato">
+            <input type="text" placeholder="Handle" class="handle caixa-contato">
+            <button class="add-contact-botao" onclick={addContact()}>
+                ADD CONTACT
+            </button>
+        </div>
+    </div>
+
+    <div class="tela-edita-contato">
+        <div class="edita-contato">
+            <input type="text" placeholder="Name" class="edit-name caixa-contato">
+            <input type="text" placeholder="Handle" class="edit-handle caixa-contato">
+            <button class="edit-contact-botao" onclick={editContact()}>
+                EDIT CONTACT
+            </button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
