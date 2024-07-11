@@ -1,12 +1,15 @@
 let data = [{
+    id: "0",
     name: "Ana Britto",
     handle: "ana_britto",
 },
 {
+    id: "1",
     name: "Ricardo Costa",
     handle: "ricardocosta",
 },
 {
+    id: "2",
     name: "Tiago Montana",
     handle: "tiagomontana",
 }];
@@ -53,14 +56,16 @@ function addContact() {
     const nameText = name.value;// Aqui pegamos o valor do elemento 
     const handleText = handle.value;
 
+    const object = {
+        name: nameText,
+        handle: handleText
+    };
+
+    data.push(object);
+
     let codeText = ''; // atribuímos um valor para o codeText
 
     if (nameText && handleText) {
-        //Adicionar elementos dentro do LOCAL STORAGE
-        localStorage.setItem("name", nameText);
-        localStorage.setItem("handle", handleText);
-
-
         //verificamos se a pessoa escreveu os dois textos
         codeText = `
             <div class="item ${handleText}">
@@ -102,14 +107,6 @@ function editContact() {
         item = document.querySelector(".ana_britto")
     }
 
-    //pega os dados que estão no LOCAL STORAGE
-    const nomeDoStorage = localStorage.getItem("name");
-    console.log("Nome do storage",nomeDoStorage);
-
-    const list = [
-        
-    ]
-
     const classe = item.classList.item(1) //pega o nome da segunda classe do item
 
     const name = document.querySelector(".edit-name"); //pega o elemento nome do contato no quando queremos editar
@@ -117,6 +114,10 @@ function editContact() {
 
     const nameText = name.value;
     const handleText = handle.value;
+
+    //Passo 1: pegar lista do local storage 
+    //Passo 2: atulizar com as modificações do editContact
+    //passo 3: jogar de volta dentro do local storage
 
     if (nameText && handleText && item) { //verificamos se os campos foram preenchidos e inserimos o componente 
         item.innerHTML = ` 
@@ -140,6 +141,10 @@ function editContact() {
 }
 
 function removeContact(name) {
+    //Passo 1: pagar a lista do local storage;
+    //Passo 2: mudanças que são necessários (aqui é excluir);
+    //passo 3: jogar a lista atualizada para o local storage;
+
     const item = document.querySelector(`.${name}`);
     item.remove();
 }
